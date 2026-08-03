@@ -248,7 +248,11 @@ with gr.Blocks(css=css, theme=gr.themes.Soft(primary_hue="sky"), title="KWASU Pn
         show_progress="full"
     )
 
+import os
+
+port = int(os.environ.get("PORT", 7860))
+
 demo.launch(
     server_name="0.0.0.0",
-    server_port=7860
+    server_port=port
 )
